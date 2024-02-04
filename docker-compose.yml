@@ -1,0 +1,26 @@
+# docker run --name baidunetdisk \
+#   -v {配置文件夹}:/root/baidunetdisk \
+#   -v {下载文件夹}:/root/baidunetdiskdownload \
+#   -p {VNC端口}:5900 \
+#   -p {WEB端口}:6080 \
+#   -e VNC_SERVER_PASSWD='{VNC密码}' \
+#   tzuhsiao/baidunetdisk:latest
+
+version: '3.7'
+services:
+
+  baidunetdisk:
+    # image: tzuhsiao/baidunetdisk:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: ${COMPOSE_RESTART_POLICY}
+    volumes:
+    - ${DATA_PATH_HOST}/baidunetdisk:/root/baidunetdisk
+    - ${DATA_PATH_HOST}/baidunetdiskdownload:/root/baidunetdiskdownload
+    ports:
+      - "5900:5900" # VNC
+      - "6080:6080" # WEB
+    environment:
+      - VNC_SERVER_PASSWD=${VNC_SERVER_PASSWD}
+    # command: -debug
