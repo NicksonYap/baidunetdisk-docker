@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ENV BAIDUNETDISK_PACKAGE https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.3.0/baidunetdisk_4.3.0_amd64.deb
+ENV BAIDUNETDISK_PACKAGE https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.17.7/baidunetdisk_4.17.7_amd64.deb
 ENV NOVNC_PACKAGE https://github.com/novnc/noVNC/archive/refs/tags/v1.3.0.tar.gz
 
 ENV VNC_SERVER_PASSWD password
